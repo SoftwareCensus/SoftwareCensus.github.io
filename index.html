@@ -1,1 +1,364 @@
-Hello World
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Software Census levererar konsulttjänter inom DevOps med särskillt fokus på CI/CD, AppSec, Cloud-Infra och hantering av öppen källkod.">
+  <title>Software Census</title>
+  <link rel="stylesheet" href="css/pico.indigo.min.css" />
+  <link rel="stylesheet" href="css/pico.colors.min.css" />
+  <link rel="stylesheet" href="css/sc.css" />
+</head>
+<body>
+
+    <div id="home"></div>
+
+    <header id="navigation" class="container-fluid">
+        <nav class="sticky-nav-bar">
+            <ul>
+                <li>
+                    <a href="#home" aria-label="Software Census">
+                        <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 527.091 99.845" style="height: 2.4rem;">
+                            <path class="SoftwareCensus" fill="#eee" d="M30.935 66.192c0 4.288-1.342 7.831-4.027 10.628-2.835 2.91-6.564 4.364-11.189 4.364C5.39 81.184.224 75.869.224 65.24h9.845c0 5.146 1.846 7.72 5.538 7.72 4.028 0 6.042-2.108 6.042-6.322 0-3.133-2.666-5.65-8-7.552C4.55 55.88 0 50.64 0 43.367c0-4.885 2.07-8.651 6.21-11.3C2.07 29.048 0 25.02 0 19.986c0-3.916 1.417-7.18 4.252-9.79 2.834-2.61 6.563-3.916 11.188-3.916 5.482 0 9.49 1.753 12.027 5.258 1.865 2.574 2.797 5.744 2.797 9.51h-9.062c0-4.363-1.79-6.545-5.37-6.545-4.066 0-6.098 1.828-6.098 5.483 0 3.095 2.517 5.63 7.552 7.607 4.326 1.679 7.235 3.115 8.726 4.308 3.282 2.61 4.923 6.247 4.923 10.908 0 5.222-1.864 9.23-5.594 12.028 3.73 2.648 5.594 6.433 5.594 11.356zM21.65 43.256c0-2.536-1.417-4.326-4.251-5.37H15.83c-4.065 0-6.097 1.827-6.097 5.482 0 1.38.56 2.657 1.678 3.832 1.119 1.174 2.517 1.967 4.195 2.377 4.028 0 6.042-2.107 6.042-6.321zm429.163 4.542c0 2.76-.988 5.016-2.965 6.77-2.219 1.976-5.342 2.964-9.37 2.964-3.561 0-7.02-.998-10.377-2.993l3.329-6.489c2.629 1.734 5.072 2.601 7.328 2.601 1.92 0 2.881-.662 2.881-1.986 0-.69-.336-1.221-1.007-1.594-.429-.242-1.398-.531-2.909-.867-1.697-.373-2.806-.662-3.328-.867-1.865-.727-3.124-1.865-3.776-3.412-.355-.84-.532-1.846-.532-3.021 0-2.275.774-4.261 2.322-5.958 1.995-2.182 5.072-3.272 9.23-3.272 2.89 0 5.697.559 8.42 1.678l-3.106 5.93c-1.715-.877-3.356-1.315-4.922-1.315-1.846 0-2.77.634-2.77 1.902 0 .578.373 1.044 1.12 1.398.335.168 1.323.42 2.964.756 2.406.503 4.177 1.305 5.315 2.405 1.435 1.38 2.153 3.17 2.153 5.37zm-27.355-.727c0 4.83-2.284 8.037-6.853 9.622-1.902.653-4.223.979-6.964.979-5.39 0-9.258-1.324-11.608-3.972-1.492-1.678-2.238-3.888-2.238-6.629V30.597h9.175v14.712c0 1.622.391 2.816 1.175 3.58.839.82 2.004 1.23 3.496 1.23 1.473 0 2.629-.41 3.468-1.23.783-.764 1.175-1.958 1.175-3.58V30.597h9.174zm-32.39.727c0 2.76-.988 5.016-2.964 6.77-2.22 1.976-5.343 2.964-9.37 2.964-3.562 0-7.021-.998-10.377-2.993l3.328-6.489c2.63 1.734 5.072 2.601 7.328 2.601 1.92 0 2.881-.662 2.881-1.986 0-.69-.335-1.221-1.007-1.594-.429-.242-1.398-.531-2.909-.867-1.697-.373-2.806-.662-3.328-.867-1.865-.727-3.124-1.865-3.776-3.412-.354-.84-.532-1.846-.532-3.021 0-2.275.774-4.261 2.322-5.958 1.995-2.182 5.072-3.272 9.23-3.272 2.89 0 5.697.559 8.42 1.678l-3.105 5.93c-1.716-.877-3.357-1.315-4.923-1.315-1.846 0-2.77.634-2.77 1.902 0 .578.374 1.044 1.12 1.398.335.168 1.323.42 2.964.756 2.406.503 4.177 1.305 5.315 2.405 1.436 1.38 2.153 3.17 2.153 5.37zm-27.41 8.755h-9.175V43.407c0-2.294-.26-3.813-.783-4.56-.765-1.1-1.911-1.65-3.44-1.65-1.399 0-2.574.476-3.525 1.427-.857.858-1.286 2.2-1.286 4.028v13.901h-9.175V30.597h9.175v3.272c1.063-1.23 2.042-2.098 2.937-2.601 1.454-.82 3.272-1.23 5.454-1.23 2.797 0 5.072.754 6.825 2.265 1.995 1.715 2.992 4.289 2.992 7.72zm-32.614-11.3h-19.3c0 3.897 1.884 5.846 5.65 5.846 1.921 0 3.394-.82 4.42-2.462h8.866c-.708 2.35-1.752 4.168-3.132 5.455-2.499 2.33-5.846 3.496-10.042 3.496-5.333 0-9.342-1.622-12.027-4.867-2.014-2.424-3.02-5.38-3.02-8.866 0-4.14 1.258-7.506 3.775-10.098 2.518-2.592 6.07-3.888 10.657-3.888 5.65 0 9.687 2.051 12.111 6.154 1.361 2.312 2.042 4.997 2.042 8.055zm-8.559-5.258c-.653-2.872-2.396-4.308-5.23-4.308-1.567 0-2.835.457-3.804 1.37-.765.728-1.25 1.707-1.455 2.938zm-24.418 15.663c-3.245 1.287-6.247 1.93-9.007 1.93-4.81 0-9.118-1.538-12.922-4.615-4.848-3.935-7.272-9.063-7.272-15.384 0-6.34 2.424-11.477 7.272-15.412 3.804-3.076 8.14-4.615 13.006-4.615 2.648 0 5.622.644 8.923 1.93V31.38c-.932-1.138-1.883-1.995-2.853-2.574-1.772-1.062-3.674-1.594-5.706-1.594-2.573 0-4.81.774-6.713 2.322-2.405 1.958-3.608 4.643-3.608 8.055 0 3.394 1.203 6.07 3.608 8.028 1.902 1.547 4.14 2.321 6.713 2.321 2.032 0 3.934-.531 5.706-1.594.95-.56 1.902-1.417 2.853-2.573zm-49.48-10.405h-19.3c0 3.897 1.884 5.846 5.65 5.846 1.921 0 3.394-.82 4.42-2.462h8.867c-.709 2.35-1.753 4.168-3.133 5.455-2.499 2.33-5.846 3.496-10.041 3.496-5.333 0-9.343-1.622-12.028-4.867-2.014-2.424-3.02-5.38-3.02-8.866 0-4.14 1.258-7.506 3.776-10.098 2.517-2.592 6.07-3.888 10.656-3.888 5.65 0 9.687 2.051 12.111 6.154 1.362 2.312 2.042 4.997 2.042 8.055zm-8.559-5.258c-.652-2.872-2.396-4.308-5.23-4.308-1.566 0-2.834.457-3.804 1.37-.765.728-1.25 1.707-1.455 2.938zm-23.131-.923c-1.287-.616-2.592-.923-3.916-.923-3.02 0-4.979 1.23-5.874 3.692-.335.895-.503 2.097-.503 3.608v11.104h-9.175V30.597h9.175v4.251c.97-1.51 2.014-2.601 3.132-3.272 1.51-.896 3.3-1.343 5.37-1.343.486 0 1.082.028 1.79.084zm-25.789 17.481h-9.174v-2.88c-.877 1.1-1.762 1.901-2.657 2.405-1.567.876-3.348 1.314-5.343 1.314-3.226 0-6.097-1.11-8.615-3.328-3.002-2.648-4.503-6.154-4.503-10.517 0-4.438 1.539-7.981 4.615-10.629 2.443-2.107 5.25-3.16 8.42-3.16 1.845 0 3.58.391 5.202 1.174.932.448 1.893 1.184 2.88 2.21v-2.545h9.175zm-8.894-12.978c0-1.641-.579-3.035-1.735-4.182-1.156-1.147-2.554-1.72-4.195-1.72-1.828 0-3.329.69-4.503 2.07-.951 1.119-1.427 2.396-1.427 3.832s.476 2.713 1.427 3.832c1.156 1.38 2.657 2.07 4.503 2.07 1.66 0 3.063-.57 4.21-1.707 1.146-1.137 1.72-2.536 1.72-4.195zm-23.468-12.978l-13.593 25.956h-6.126l-6.489-14.237-6.21 14.237h-6.18l-13.343-25.956h10.238l6.209 13.677 6.517-13.677h5.762l6.49 14.069 6.516-14.07zm-52.248 7.552h-5.23v18.404h-9.175V38.15h-3.02v-7.552h3.02v-7.804h9.174v7.804h5.23zm-18.88 0h-6.462v18.404h-9.174V38.15H68.71v-7.552h3.272v-3.44c0-3.823.97-6.77 2.91-8.84 2.405-2.573 5.295-3.86 8.67-3.86 1.342 0 2.694.318 4.056.952v8c-1.25-.69-2.322-1.036-3.217-1.036-1.25 0-2.163.476-2.741 1.427-.336.54-.504 1.874-.504 4v2.797h6.462zm-21.65 5.426c0 3.599-1.184 6.685-3.552 9.258-2.871 3.133-6.89 4.699-12.055 4.699-5.184 0-9.212-1.566-12.083-4.699-2.368-2.573-3.552-5.734-3.552-9.482 0-3.375 1.193-6.368 3.58-8.978 2.89-3.152 7.002-4.727 12.335-4.727 4.904 0 8.82 1.575 11.747 4.727 2.387 2.573 3.58 5.64 3.58 9.202zm-9.537 0c0-1.678-.592-3.1-1.776-4.266-1.185-1.165-2.616-1.748-4.294-1.748-1.902 0-3.45.709-4.643 2.126-.97 1.137-1.454 2.433-1.454 3.888 0 1.473.484 2.778 1.454 3.916 1.193 1.417 2.741 2.125 4.643 2.125 1.697 0 3.133-.582 4.308-1.748 1.174-1.165 1.762-2.596 1.762-4.293z"/>
+                            <path class="TagAndBox" fill="var(--sc-logo)" d="M403.05 76.196V86.29c0 .146.045.264.133.351a.468.468 0 0 0 .322.118.449.449 0 0 0 .454-.47v-9.3l3.12 9.228c.156.36.371.542.645.542.283 0 .503-.181.659-.542l3.12-9.229v9.302c0 .146.044.264.132.351a.468.468 0 0 0 .322.118.45.45 0 0 0 .469-.469V76.196a.666.666 0 0 0-.205-.513.65.65 0 0 0-.44-.19.81.81 0 0 0-.498.102.816.816 0 0 0-.322.44l-.293.864-2.93 8.51-2.9-8.48-.322-.938a.752.752 0 0 0-.323-.396.858.858 0 0 0-.498-.117.728.728 0 0 0-.454.205c-.127.127-.19.298-.19.513zm-2.49-.469h-6.987c-.234 0-.351.137-.351.41 0 .274.117.41.351.41h3.106v9.757c0 .136.044.249.132.336a.468.468 0 0 0 .322.118.449.449 0 0 0 .454-.454v-9.756h2.974a.475.475 0 0 0 .351-.132.376.376 0 0 0 0-.571.51.51 0 0 0-.351-.118zm-20.574.654H365.16c-.497 0-.746.29-.746.87 0 .58.249.87.746.87h6.589V98.82c0 .29.093.528.28.714a.992.992 0 0 0 .683.249.952.952 0 0 0 .653-.249.919.919 0 0 0 .31-.714V78.12h6.31c.31 0 .559-.093.745-.28a.765.765 0 0 0 .28-.59.797.797 0 0 0-.28-.621c-.186-.166-.435-.249-.745-.249zm-21.444.497v21.91c0 .311.093.56.28.746a.992.992 0 0 0 .683.249.952.952 0 0 0 .963-.995v-21.91c0-.331-.103-.59-.31-.777a.952.952 0 0 0-.653-.248.993.993 0 0 0-.684.248c-.186.187-.28.446-.28.777zM328.8 83.312v15.445c0 .332.093.59.28.777a.93.93 0 0 0 .683.28c.249-.02.466-.114.653-.28.207-.207.31-.476.31-.808V87.662c.726-1.326 1.575-2.31 2.549-2.952.932-.622 1.989-.932 3.17-.932 1.077 0 1.937.331 2.58.994.58.58.87 1.316.87 2.207v11.778c0 .311.093.57.28.777a.992.992 0 0 0 .683.249.952.952 0 0 0 .653-.249c.207-.207.31-.466.31-.777V86.98c0-1.347-.455-2.476-1.367-3.388-.994-1.015-2.33-1.523-4.009-1.523-1.305 0-2.445.28-3.419.84-.932.538-1.699 1.315-2.3 2.33v-1.926c0-.311-.103-.56-.31-.746a.952.952 0 0 0-.653-.249.993.993 0 0 0-.684.249c-.186.186-.28.435-.28.746zm-7.397-.373v15.818c0 .311.093.57.28.777a.992.992 0 0 0 .684.249.93.93 0 0 0 .683-.28c.207-.186.311-.435.311-.746V82.94c0-.29-.104-.518-.31-.684a1.08 1.08 0 0 0-.684-.218.993.993 0 0 0-.684.249c-.187.145-.28.363-.28.653zm.964-7.086c-.498 0-.881.166-1.15.497-.249.31-.373.694-.373 1.15 0 .435.124.798.373 1.088.269.331.652.497 1.15.497.476 0 .86-.166 1.15-.497.269-.311.403-.674.403-1.088 0-.456-.134-.84-.404-1.15-.29-.331-.673-.497-1.15-.497zM303.44 94.53c-.497 1.077-1.067 1.885-1.71 2.424-.828.725-1.864 1.088-3.107 1.088-1.575 0-2.828-.715-3.76-2.145-.809-1.201-1.254-2.683-1.337-4.444h12.214v-.497c0-2.424-.601-4.475-1.803-6.154-1.326-1.823-3.097-2.735-5.314-2.735s-3.978.912-5.284 2.735c-1.18 1.679-1.771 3.73-1.771 6.154 0 2.403.59 4.434 1.771 6.091 1.306 1.823 3.067 2.735 5.284 2.735 1.574 0 2.942-.404 4.102-1.212 1.14-.767 2.01-1.875 2.61-3.325.125-.311.125-.601 0-.87a.847.847 0 0 0-.528-.467 1.12 1.12 0 0 0-.777-.03c-.269.123-.466.341-.59.652zm-9.852-4.817c.124-1.513.57-2.818 1.336-3.916.933-1.347 2.166-2.02 3.699-2.02s2.776.683 3.73 2.05c.766 1.12 1.211 2.415 1.336 3.886zm-12.524-7.646c1.823 0 3.346.435 4.568 1.306 1.015.746 1.689 1.668 2.02 2.766a.8.8 0 0 1-.155.714 1.002 1.002 0 0 1-.622.404c-.29.063-.549.042-.777-.062a.846.846 0 0 1-.497-.621c-.31-.974-.84-1.689-1.585-2.145-.746-.435-1.771-.652-3.077-.652-1.76 0-3.118.735-4.071 2.206-.85 1.285-1.274 2.932-1.274 4.942 0 2.05.425 3.719 1.274 5.003.932 1.41 2.29 2.114 4.071 2.114 1.471 0 2.59-.228 3.357-.684.766-.456 1.336-1.223 1.709-2.3a.93.93 0 0 1 .56-.622c.248-.103.507-.124.776-.062.29.062.498.197.622.404.145.207.155.466.031.777-.622 1.306-1.378 2.29-2.269 2.953-1.18.85-2.735 1.274-4.661 1.274-2.507 0-4.414-.891-5.719-2.673-1.14-1.554-1.71-3.605-1.71-6.153 0-2.466.591-4.517 1.772-6.154 1.347-1.823 3.232-2.735 5.657-2.735zm-25.36 1.244v15.445c0 .332.093.59.28.777a.93.93 0 0 0 .683.28c.249-.02.466-.114.653-.28.207-.207.31-.476.31-.808V87.662c.726-1.326 1.575-2.31 2.549-2.952.932-.622 1.989-.932 3.17-.932 1.077 0 1.937.331 2.58.994.58.58.87 1.316.87 2.207v11.778c0 .311.093.57.28.777a.992.992 0 0 0 .683.249.952.952 0 0 0 .653-.249c.207-.207.31-.466.31-.777V86.98c0-1.347-.455-2.476-1.367-3.388-.994-1.015-2.33-1.523-4.009-1.523-1.305 0-2.445.28-3.419.84-.932.538-1.699 1.315-2.3 2.33v-1.926c0-.311-.103-.56-.31-.746a.952.952 0 0 0-.653-.249.993.993 0 0 0-.684.249c-.186.186-.28.435-.28.746zM248.68 94.53c-.497 1.077-1.067 1.885-1.71 2.424-.828.725-1.864 1.088-3.107 1.088-1.575 0-2.828-.715-3.76-2.145-.809-1.201-1.254-2.683-1.337-4.444h12.214v-.497c0-2.424-.601-4.475-1.803-6.154-1.326-1.823-3.097-2.735-5.314-2.735s-3.978.912-5.283 2.735c-1.181 1.679-1.772 3.73-1.772 6.154 0 2.403.59 4.434 1.772 6.091 1.305 1.823 3.066 2.735 5.283 2.735 1.575 0 2.942-.404 4.102-1.212 1.14-.767 2.01-1.875 2.61-3.325.125-.311.125-.601 0-.87a.847.847 0 0 0-.527-.467 1.12 1.12 0 0 0-.777-.03c-.27.123-.467.341-.59.652zm-9.852-4.817c.125-1.513.57-2.818 1.337-3.916.932-1.347 2.165-2.02 3.698-2.02s2.776.683 3.73 2.05c.766 1.12 1.211 2.415 1.336 3.886zm-6.557-12.774c0-.331-.104-.59-.311-.776a.952.952 0 0 0-.653-.25c-.269 0-.497.073-.683.218-.187.187-.28.436-.28.746v8.08c-.642-.973-1.409-1.688-2.3-2.144-.87-.456-1.896-.683-3.077-.683-2.382 0-4.237.911-5.563 2.734-1.18 1.617-1.771 3.657-1.771 6.123 0 2.445.59 4.475 1.771 6.091 1.326 1.844 3.18 2.766 5.563 2.766 1.243 0 2.373-.28 3.388-.839.87-.497 1.533-1.108 1.989-1.834v1.337c0 .29.093.528.28.715.186.165.404.259.652.28.27 0 .487-.073.653-.218.207-.187.321-.446.342-.777zm-7.304 6.9c1.74 0 3.098.735 4.072 2.206.87 1.306 1.305 2.953 1.305 4.942 0 1.968-.435 3.605-1.305 4.91-.974 1.471-2.331 2.207-4.072 2.207-1.76 0-3.128-.736-4.102-2.207-.85-1.305-1.274-2.942-1.274-4.91 0-1.99.425-3.636 1.274-4.942.974-1.47 2.341-2.206 4.102-2.206zm-14.016-.901v15.818c0 .311.093.57.28.777a.992.992 0 0 0 .684.249.93.93 0 0 0 .683-.28c.207-.186.311-.435.311-.746V82.94c0-.29-.104-.518-.31-.684a1.08 1.08 0 0 0-.684-.218.993.993 0 0 0-.684.249c-.187.145-.28.363-.28.653zm.964-7.086c-.498 0-.881.166-1.15.497-.249.31-.373.694-.373 1.15 0 .435.124.798.373 1.088.269.331.652.497 1.15.497.476 0 .86-.166 1.15-.497.269-.311.403-.674.403-1.088 0-.456-.134-.84-.404-1.15-.29-.331-.673-.497-1.15-.497zm-10.63 6.744h-1.553c-.31 0-.56.083-.746.248a.807.807 0 0 0-.249.59c0 .229.083.426.249.591.186.187.435.28.746.28h1.554v14.42c0 .332.093.601.28.808a.992.992 0 0 0 .683.249.894.894 0 0 0 .653-.28c.207-.207.31-.466.31-.777v-14.42h2.27c.31 0 .559-.093.745-.28a.807.807 0 0 0 .249-.59.807.807 0 0 0-.249-.59c-.186-.166-.435-.25-.746-.25h-2.268v-3.604c0-.394.103-.715.31-.964.249-.29.601-.435 1.057-.435h.901c.311 0 .56-.093.746-.28a.807.807 0 0 0 .249-.59.844.844 0 0 0-.249-.622c-.186-.165-.435-.248-.746-.248h-1.243c-.953 0-1.699.31-2.237.932-.477.56-.715 1.254-.715 2.082zm-19.983.715v15.445c0 .332.094.59.28.777a.93.93 0 0 0 .684.28c.249-.02.466-.114.653-.28.207-.207.31-.476.31-.808V87.662c.725-1.326 1.575-2.31 2.549-2.952.932-.622 1.989-.932 3.17-.932 1.077 0 1.937.331 2.58.994.58.58.87 1.316.87 2.207v11.778c0 .311.093.57.28.777a.992.992 0 0 0 .683.249.952.952 0 0 0 .652-.249c.208-.207.311-.466.311-.777V86.98c0-1.347-.456-2.476-1.367-3.388-.995-1.015-2.331-1.523-4.01-1.523-1.305 0-2.444.28-3.418.84-.932.538-1.699 1.315-2.3 2.33v-1.926c0-.311-.103-.56-.31-.746a.952.952 0 0 0-.653-.249.993.993 0 0 0-.684.249c-.186.186-.28.435-.28.746zm-12.369-1.181c-2.465 0-4.392.911-5.78 2.734-1.223 1.617-1.834 3.657-1.834 6.123 0 2.445.611 4.475 1.834 6.091 1.388 1.844 3.315 2.766 5.78 2.766 2.445 0 4.362-.922 5.75-2.766 1.243-1.616 1.864-3.646 1.865-6.091 0-2.466-.622-4.506-1.865-6.123-1.388-1.823-3.305-2.734-5.75-2.734zm0 1.709c1.824 0 3.243.735 4.258 2.206.932 1.306 1.399 2.953 1.399 4.942 0 1.947-.467 3.584-1.399 4.91-1.015 1.471-2.434 2.207-4.258 2.207-1.844 0-3.284-.736-4.32-2.207-.89-1.305-1.336-2.942-1.336-4.91 0-1.99.446-3.636 1.336-4.942 1.036-1.47 2.476-2.206 4.32-2.206zm-20.542-7.987c-2.963 0-5.356 1.087-7.18 3.263-1.864 2.196-2.796 5.097-2.796 8.702 0 3.688.932 6.61 2.797 8.764 1.802 2.134 4.195 3.201 7.179 3.201 2.63 0 4.734-.725 6.309-2.176 1.326-1.201 2.237-2.838 2.734-4.91.083-.373.042-.684-.124-.932a.98.98 0 0 0-.653-.435 1.026 1.026 0 0 0-.745.093c-.25.145-.404.383-.467.715-.455 2.113-1.326 3.657-2.61 4.63-1.14.85-2.621 1.275-4.444 1.275-2.404 0-4.32-.84-5.75-2.518-1.533-1.802-2.3-4.371-2.3-7.707 0-3.253.767-5.801 2.3-7.645 1.471-1.72 3.388-2.58 5.75-2.58 1.802 0 3.294.414 4.475 1.243 1.305.912 2.134 2.269 2.486 4.071.062.373.218.643.466.808a.801.801 0 0 0 .684.125c.27-.062.477-.197.622-.404.165-.249.228-.518.186-.808-.373-1.99-1.233-3.574-2.58-4.755-1.574-1.347-3.687-2.02-6.34-2.02zM467.09 0v60h60V1.335c-8.075 7.541-15.496 16.018-20.869 26.162-3.19 5.733-5.632 12.083-6.429 18.792-1.975 2.915-3.865 6.321-6.978 7.844-1.304.19-1.987-.55-2.443-1.625-.03.02-.067.042-.091.054l.073-.095c-.627-1.51-.822-3.657-1.66-4.837-2.708-5.826-5.628-11.856-10.289-16.055-2.274-.397-1.105-.97 0-2.235l6.448-7.052c3.318 3.804 5.553 8.603 8.2 12.986.814 1.387 1.637 2.775 2.448 4.166 3.29-6.77 7.531-12.954 11.857-18.94 5.781-7.546 12.38-14.211 19.257-20.5z" class="TagAndBox" fill="#49b"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <details class="dropdown">
+                        <summary role="button" class="secondary outline">
+                            <svg height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path fill="var(--sc-primary-background)" d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+                            </svg>
+                        </summary>
+                        <ul id="menu" class="menu" dir="rtl">
+                            <li><a href="#home" aria-label="Verksamheten" class="secondary">Hem</a></li>
+                            <li><a href="#devops" aria-label="Verksamheten" class="secondary">Vad vi gör</a></li>
+                            <li><a href="#about" aria-label="Företaget" class="secondary">Om företaget</a></li>
+                            <li><a href="#contact" aria-label="Kontakta oss" class="secondary">Hör av Dig</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="rings" class="container-fluid">
+        <section class="container">
+            <h1 class="pico-color-zinc-50">
+                Förbättra DevEx?
+            </h1>
+            <h5 style="color:#6ac">
+                Moderna plattformar. Optimal utvecklarupplevelse.
+            </h5>
+            <p class="pico-color-zinc-150">
+                Snabb on-boarding, tydlig dokumentation, automation & self-service,
+                låg friktion och hög tillfredsställelse.
+            </p>
+            <a href="#contact" aria-label="Hör av Dig" ><button>Hör av dig!</button></a>
+        </section>
+    </section>
+
+    <div id="devops" class="anchor"></div>
+    <section id="devops-section" class="container center">
+        <div id="devops-container" class="container center">
+            <div id="devops-top-grid" class="grid">
+                <article>
+                    <div class="heading-with-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-infinity">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9.828 9.172a4 4 0 1 0 0 5.656a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+                        </svg>
+                        <h1>DevOps</h1>
+                    </div>
+                    <p>
+                        Vi är experter på DevOps. När man förenar en kultur av delat ansvar och
+                        samarbete mellan utveckling och drift, med modern teknik skapas
+                        förutsättningar att effektivt bygga, testa och driftsätta mjukvara
+                        i moderna molnmiljöer. Snabbare, säkrare och mer kostnadseffektivt.
+                    </p>
+                </article>
+                <article>
+                    <img id="devops-stack" alt="devops stack" src="img/663_services.jpg">
+                </article>
+            </div>
+            <div id="devops-second-grid" class="grid">
+                <article id="cicd" class="card">
+                    <div class="heading-with-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-filter-cog">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M12 20l-3 1v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v1.5" />
+                            <path d="M19.001 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                            <path d="M19.001 15.5v1.5" />
+                            <path d="M19.001 21v1.5" />
+                            <path d="M22.032 17.25l-1.299 .75" />
+                            <path d="M17.27 20l-1.3 .75" />
+                            <path d="M15.97 17.25l1.3 .75" />
+                            <path d="M20.733 20l1.3 .75" />
+                        </svg>
+                        <h4>
+                            CI/CD
+                        </h4>
+                    </div>
+                    <p>
+                        Pipelines för bygg, test och driftsättning möjliggör snabba
+                        releaser. Effektiva verktyg för hantering av ärenden och buggar,
+                        kodversioner, komponenter och artefakter, konfiguration och
+                        deployment är vitala i en moderna byggplattform.
+                    </p>
+                </article>
+                <article id="appsec" class="card">
+                    <div class="heading-with-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shield-check">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06" />
+                            <path d="M15 19l2 2l4 -4" />
+                        </svg>
+                        <h4>
+                            AppSec
+                        </h4>
+                    </div>
+                    <p>
+                        AppSec integrerar säkerhet i utvecklingsprocessen genom kodanalys,
+                        hantering av hemligheter och automatiserade tester. Med "shift-left"
+                        och tät återkoppling blir säkerhet en del av applikationslivscykeln
+                        och resulterar i säkrare applikationer.
+                    </p>
+                </article>
+            </div>
+            <div id="devops-third-grid" class="grid">
+                <article id="cloudinfra" class="card">
+                    <div class="heading-with-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-cloud-code">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M11 18.004h-4.343c-2.572 -.004 -4.657 -2.011 -4.657 -4.487c0 -2.475 2.085 -4.482 4.657 -4.482c.393 -1.762 1.794 -3.2 3.675 -3.773c1.88 -.572 3.956 -.193 5.444 1c1.488 1.19 2.162 3.007 1.77 4.769h.99a3.468 3.468 0 0 1 3.307 2.444" />
+                            <path d="M20 21l2 -2l-2 -2" />
+                            <path d="M17 17l-2 2l2 2" />
+                        </svg>
+                        <h4>
+                            Cloud Infra
+                        </h4>
+                    </div>
+                    <p>
+                        Modern infrastruktur utgör grunden i skalbar och flexibel IT-drift.
+                        Teknik som containerorkestrering, loggströmning och infrastruktur som kod
+                        ger applikationsdrift med minskade driftstörningar och snabbare uppgraderingar.
+                    </p>
+                </article>
+                <article id="opensource" class="card">
+                    <div class="heading-with-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-open-source">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M12 3a9 9 0 0 1 3.618 17.243l-2.193 -5.602a3 3 0 1 0 -2.849 0l-2.193 5.603a9 9 0 0 1 3.617 -17.244z" />
+                        </svg>
+                        <h4>
+                            Öppen källkod
+                        </h4>
+                    </div>
+                    <p>
+                        Öppen källkod är central i modern utveckling men kräver god styrning
+                        för hållbar och säker användning. Med riktlinjer, klassning,
+                        kompositionsanalys, SBOM och uppföljning får vi insyn i
+                        beroendekedjan och kan fatta medvetna beslut.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div id="about" class="anchor"></div>
+    <div class="svg-divider">
+        <svg viewBox="0 0 100 10" preserveAspectRatio="none">
+            <polygon fill="var(--sc-primary-background)" points="0,10 100,0 100,10"/>
+        </svg>
+    </div>
+    <section id="about-section" class="container-fluid center">
+        <div id="about-container" class="container center">
+            <svg id="sc-checkbox" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid meet">
+                <path d="m0 0c0 100 0 200 0 300 100 0 200 0 300 0 0-100 0-200 0-300-50 50-100 100-127 182-8 19-5 42-19 57-8 11-27 38-38 17-4-16-12-34-20-49-11-21-23-41-40-56-16-3 9-17 12-24 10-8 20-32 29-10 16 24 29 50 44 75 20-40 45-78 73-112 25-31 53-59 82-85-99 0-198 0-298 0z" fill="#49b"/>
+            </svg>
+            <h1 id="about-header">Om Software Census</h1>
+            <p id="about-paragraph">
+                Sedan starten 2012 har Software Census hjälpt svenska organisationer
+                bygga processer och verktyg för snabbare och säkrare leveranser,
+                bättre utvecklarupplevelse och databaserade beslut.
+                Kärnan i verksamheten är konsulttjänster inom DevOps.
+                Vårt fokus har skiftat något över tid men den röda tråden finns
+                där. Passionen är densamma.
+            </p>
+            <a alt="LinkedIn" aria-label="Software Census på LinkedIn" href="https://www.linkedin.com/company/software-census/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-brand-linkedin">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M17 2a5 5 0 0 1 5 5v10a5 5 0 0 1 -5 5h-10a5 5 0 0 1 -5 -5v-10a5 5 0 0 1 5 -5zm-9 8a1 1 0 0 0 -1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0 -1 -1m6 0a3 3 0 0 0 -1.168 .236l-.125 .057a1 1 0 0 0 -1.707 .707v5a1 1 0 0 0 2 0v-3a1 1 0 0 1 2 0v3a1 1 0 0 0 2 0v-3a3 3 0 0 0 -3 -3m-6 -3a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1" />
+                </svg>
+                LinkedIn
+            </a>
+            <a alt="Github" aria-label="Software Census på Github" href="https://github.com/SoftwareCensus">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-brand-github">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M5.315 2.1c.791 -.113 1.9 .145 3.333 .966l.272 .161l.16 .1l.397 -.083a13.3 13.3 0 0 1 4.59 -.08l.456 .08l.396 .083l.161 -.1c1.385 -.84 2.487 -1.17 3.322 -1.148l.164 .008l.147 .017l.076 .014l.05 .011l.144 .047a1 1 0 0 1 .53 .514a5.2 5.2 0 0 1 .397 2.91l-.047 .267l-.046 .196l.123 .163c.574 .795 .93 1.728 1.03 2.707l.023 .295l.007 .272c0 3.855 -1.659 5.883 -4.644 6.68l-.245 .061l-.132 .029l.014 .161l.008 .157l.004 .365l-.002 .213l-.003 3.834a1 1 0 0 1 -.883 .993l-.117 .007h-6a1 1 0 0 1 -.993 -.883l-.007 -.117v-.734c-1.818 .26 -3.03 -.424 -4.11 -1.878l-.535 -.766c-.28 -.396 -.455 -.579 -.589 -.644l-.048 -.019a1 1 0 0 1 .564 -1.918c.642 .188 1.074 .568 1.57 1.239l.538 .769c.76 1.079 1.36 1.459 2.609 1.191l.001 -.678l-.018 -.168a5.03 5.03 0 0 1 -.021 -.824l.017 -.185l.019 -.12l-.108 -.024c-2.976 -.71 -4.703 -2.573 -4.875 -6.139l-.01 -.31l-.004 -.292a5.6 5.6 0 0 1 .908 -3.051l.152 -.222l.122 -.163l-.045 -.196a5.2 5.2 0 0 1 .145 -2.642l.1 -.282l.106 -.253a1 1 0 0 1 .529 -.514l.144 -.047l.154 -.03z" />
+                </svg>
+                GitHub
+            </a>
+        </div>
+    </section>
+    <div class="svg-divider">
+        <svg viewBox="0 0 100 10" preserveAspectRatio="none">
+            <polygon fill="var(--sc-primary-background)" points="0,10 100,0 0,0"/>
+        </svg>
+    </div>
+    
+    <div id="customers" class="anchor"></div>
+    <section id="customers-section" class="container-fluid center">
+        <div id="customers-container" class="container center">
+            <h1> kunder</h1>
+            <p>
+                Idag räknar Software Census några av de största
+                organisationerna i Sverige till sina kunder.
+                Gemensamt för dessa organisationer är uppskattning
+                för innovation, kreativitet och noggrannhet.
+            </p>
+            <div class="grid">
+                <article><img alt="Electrolux" src="img/200_electrolux.jpg"></article>
+                <article><img alt="Försvarsmakten" src="img/200_forsvarsmakten.jpg"></article>
+                <article><img alt="Handelsbanken" src="img/200_handelsbanken.jpg"></article>
+                <article><img alt="Postnord" src="img/200_postnord.jpg"></article>
+                <article><img alt="ICA" src="img/200_ica.jpg"></article>                
+            </div>
+            <div class="grid">
+                <article><img alt="IF" src="img/200_if.jpg"></article>
+                <article><img alt="SEB" src="img/200_seb.jpg"></article>
+                <article><img alt="Scania" src="img/200_scania.jpg"></article>
+                <article><img alt="Skatteverket" src="img/200_skv.jpg"></article>
+                <article><img alt="StoraEnso" src="img/200_stora_enso.jpg"></article>
+            </div>
+        </div>
+    </section>
+
+    <div id="contact" class="anchor"></div>
+    <section id="contact-section" class="container-fluid">
+        <div id="contact-container" class="container">
+            <h1>Kontakta oss</h1>
+            <form id="contactForm"
+            action="https://script.google.com/macros/s/AKfycbw9nXRvWjlnsXjZ_NYnvL1LFDfMBi4D4PKuXNyEo24IMGTEgyr9Q7dVq7PEvpWKqvYe8A/exec"
+            method="POST"
+            target="hiddenFrame">
+                <fieldset class="grid">
+                <label for="name">
+                    Namn
+                    <input type="text" id="name" name="name"
+                    placeholder="Förnamn Efternamn" required
+                    autocomplete="name"
+                    oninvalid="this.setCustomValidity('Du måste fylla i ditt namn.')"
+                    oninput="this.setCustomValidity('')"
+                    />
+                </label>
+                <label for="email">
+                    E-post
+                    <input type="email" id="email" name="email" 
+                    placeholder="email@example.com" required
+                    autocomplete="email"
+                    oninvalid="this.setCustomValidity('Du måste fylla i din e-postadress.')"
+                    oninput="this.setCustomValidity('')"
+                    />
+                </label>
+                </fieldset>
+                <label for="message">
+                Meddelande
+                <textarea id="message" name="message" 
+                placeholder="Vad kan vi göra för Dig?" rows="5" required
+                oninvalid="this.setCustomValidity('Du måste skriva ett meddelande.')"
+                oninput="this.setCustomValidity('')"></textarea>
+                </label>
+                <label for="agree">
+                    <input id="agree" type="checkbox" name="agree" required
+                    oninvalid="this.setCustomValidity('Du måste godkänna villkoren.')"
+                    oninput="this.setCustomValidity('')"/>
+                    Jag godkänner <a href="#" aria-label="Läs villkoren" onclick="openTerms()">villkoren.</a>
+                </label>
+                <button type="submit" onclick="openWaitModal()">Skicka</button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="container-fluid center">
+        <div id="footer-container" class="container">
+            <div class="grid">
+            <div>
+                <strong>Software Census AB</strong><br />
+                Org no: 556898-9288<br />
+                Bankgiro: 109-7583<br />
+                Innehar F-skattebevis
+            </div>
+            <div>
+                <strong>Postadress</strong><br />
+                Kivra: 556898-9288<br />
+                106 31 Stockholm
+            </div>
+            <div>
+                <strong>Telefonnummer</strong><br />
+                08-559 237 00
+            </div>
+            <div>
+                <strong>Juridik</strong><br />
+                Styrelsens säte: Sundbyberg<br>
+                <a href="#" aria-label="Läs villkoren" onclick="openTerms()">Villkor</a>
+            </div>
+            </div>
+        </div>
+        <iframe title="hiddenFrame" name="hiddenFrame" id="hiddenFrame"></iframe>
+    </footer>
+
+    <dialog id="termsModal">
+        <article>
+            <header>
+            <h3>Användarvillkor</h3>
+            </header>
+            <iframe src="terms.html" title="termsFrame" style="width:100%; height:60vh; border:none;"></iframe>
+            <footer>
+            <button onclick="closeTerms()">Stäng</button>
+            </footer>
+        </article>
+    </dialog>
+
+    <dialog id="formResponseModal">
+        <article>
+            <header>
+            <h3>Meddelandet mottaghet</h3>
+            </header>
+            Tack för Ditt meddelande. Vi återkommer så snart vi kan.
+            <footer>
+            <button onclick="closeFormResponse()">Stäng</button>
+            </footer>
+        </article>
+    </dialog>
+
+    <dialog id="waitModal">
+        <div class="spinner"></div>
+    </dialog>
+
+</body>
+
+<script src="lib/three.r134.min.js"></script>
+<script src="lib/vanta.rings.min.js"></script>
+<script src="lib/sc.js"></script>
+<script>
+VANTA.RINGS({
+  el: "#rings",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  backgroundColor: "#103",
+  color: 0x17729d
+})
+</script>
+
+</html>
