@@ -306,7 +306,8 @@
             <div>
                 <strong>Juridik</strong><br />
                 Styrelsens säte: Sundbyberg<br>
-                <a href="#" aria-label="Läs villkoren" onclick="openTerms()">Villkor</a>
+                <a href="#" aria-label="Läs användarvillkor" onclick="openTerms()">Användarvillkor</a><br>
+                <a href="#" aria-label="Läs säkerhetspolicy" onclick="openSecPolicy()">Säkerhetspolicy</a>
             </div>
             </div>
         </div>
@@ -321,6 +322,18 @@
             <iframe src="terms.html" title="termsFrame" style="width:100%; height:60vh; border:none;"></iframe>
             <footer>
             <button onclick="closeTerms()">Stäng</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="secPolicyModal">
+        <article>
+            <header>
+            <h3>Säkerhetspolicy</h3>
+            </header>
+            <iframe src="security-policy.html" title="secPolicyFrame" style="width:100%; height:60vh; border:none;"></iframe>
+            <footer>
+            <button onclick="closeSecPolicy()">Stäng</button>
             </footer>
         </article>
     </dialog>
