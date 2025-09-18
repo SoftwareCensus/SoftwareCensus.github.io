@@ -265,6 +265,11 @@ details.dropdown summary {
 
 #customers-container .grid img {
     border: 0;
+    filter: grayscale() brightness(120%);
+}
+
+#customers-container .grid img:hover {
+    filter: none;
 }
 
 #contact-section {
